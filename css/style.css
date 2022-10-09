@@ -1,0 +1,9 @@
+.enviado {
+    opacity: .6;
+    background-color: rgba(105, 100, 100, 0);
+} 
+
+.esconder {
+
+    display: none;
+}
