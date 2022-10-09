@@ -23,12 +23,16 @@
                   <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="">Home</a>                    
                   </li>
+                  {if isset($smarty.session.USER_ID)}
                   <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="customer">Clientes</a>                    
                   </li>
-                  <li class="nav-item">
+                {/if}
+                  {if isset($smarty.session.USER_ID)}
+                    <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="order">Pedidos</a>                    
                   </li>
+                  {/if}                 
                   {if !isset($smarty.session.USER_ID)}
                     <li class="nav-item">
                       <a class="nav-link" aria-current="page" href="login">Login</a>

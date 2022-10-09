@@ -44,12 +44,5 @@ class CusModel {
         $query->execute([$id]);
     }
 
-    //OJO CREO QUE CORRESPONDE ELILMINAR ESTE METODO QUE ESTA EN ORDERMODEL-----------------------------------------------------------------------
-    
-    public function finalize($id) {
-        $query = $this->db->prepare('UPDATE myorder SET enviado = 1 WHERE id = ?');
-        $query->execute([$id]);
-        // var_dump($query->errorInfo()); // y eliminar la redireccion
-    }
 
 }

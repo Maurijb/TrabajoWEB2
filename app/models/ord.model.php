@@ -44,36 +44,22 @@ class OrdModel {
         $query->execute([$id]);
     }
     
-    public function update($date, $payment, $detail, $id ) {
-        
+    public function update($date, $payment, $detail, $id ) {        
         $query = $this->db->prepare("UPDATE myorder SET  fecha_pedido=?, forma_pago=?, detalle=? WHERE n_pedido=?");
         $query->execute([$date, $payment, $detail, $id]);
-       
-
     }
 
     public function send($id) {
         $query = $this->db->prepare('UPDATE myorder SET enviado = 1 WHERE n_pedido = ?');
         $query->execute([$id]);
-        // var_dump($query->errorInfo()); // y eliminar la redireccion
     }
     public function asigne($id) {
         $query = $this->db->prepare('UPDATE myorder SET enviado = 0 WHERE n_pedido = ?');
         $query->execute([$id]);
-        // var_dump($query->errorInfo()); // y eliminar la redireccion
     }
 
 
-    /* JOIN de Tablas ----------------------------------*/
-
-    public function getOrderCustomer() {
-        /*$db = connect();*/
-        $query = $this->db->prepare("SELECT myorder.*, customer.empresa as empresa FROM myorder JOIN customer ON myorder.id_cliente = customer.id_cliente");
-        $query->execute();
-
-        return $query->fetchAll(PDO::FETCH_OBJ);
-    }
-
+ 
 
 
 

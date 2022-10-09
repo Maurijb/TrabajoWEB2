@@ -10,6 +10,9 @@ class View {
     
 }
 
+
+
+
 function showCustomers($customers) {
    
     $this->smarty->assign('count', count($customers)); 

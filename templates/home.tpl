@@ -2,13 +2,11 @@
 
 
 
-<div class="m-3 col-5">
-    <h3>{$title}</h3>
-    
-    
-        
+{if $orderCustomer != null} 
+   
+<h3 class="{if count($orderCustomer)==count($send)} esconder{/if}">{$title}</h3>   
 
-<table class="table table-hover">
+<table class="table table-hover {if count($orderCustomer)==count($send)} esconder{/if}">
   <thead>
     <tr>
       <th scope="col">Empresa</th>
@@ -28,10 +26,11 @@
     {/foreach}
     </tbody>
 </table>
-     
+{/if}    
 
 
-    <h3>{$subtitle}</h3>
+{if $send != null}  
+<h3>{$subtitle}</h3>
     
 <table class="table table-hover">
   <thead>
@@ -53,6 +52,7 @@
     {/foreach}
     </tbody>
     </table>
+  {/if}
 
 
 
