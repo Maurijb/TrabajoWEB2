@@ -2,7 +2,7 @@
     <p><b>Nueva Orden</b></p>
         <div class="row">
             <div class="col-3 form-group">
-                <div >
+                <div >                
                     <label>Cliente</label>                    
                     <select name="company2" class="form-control">                    
                     {foreach from=$customers item=$cust}

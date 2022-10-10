@@ -23,13 +23,6 @@ class MainController {
         
     }
 
-    function joinedView(){ 
-        $orderCustomer = $this->joinModel->getOrderCustomer();
-        if ($orderCustomer != null)
-        $this->view->showOrderCustomer($orderCustomer);
-        else header("Location: " . BASE_URL . "order");
-     } //check controla el home
-
     function addCustomer() {
         $company = $_POST['company'];
         $address = $_POST['address'];

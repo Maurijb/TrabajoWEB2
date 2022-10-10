@@ -1,5 +1,6 @@
 <?php
 require_once './app/controllers/main.controller.php';
+require_once './app/controllers/home.controller.php';
 require_once './app/controllers/adm.controller.php';
 require_once './app/controllers/auth.controller.php';
 
@@ -10,6 +11,7 @@ if (!empty($_GET['action'])) {
     $action = $_GET['action'];
 }
 $params = explode('/', $action);
+
 
 switch ($params[0]) {
     case 'login':
@@ -25,7 +27,7 @@ switch ($params[0]) {
        $authController->logout();
        break;
     case 'home': 
-        $mainController = new MainController(); 
+        $mainController = new HomeController();
         $mainController->joinedView();         
         break;
     case 'add':
