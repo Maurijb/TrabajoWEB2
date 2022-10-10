@@ -75,10 +75,7 @@ class MainController {
         $this->view->showDetail($order);
     } //check manda la orden a ver en detalle
 
-    function filter($id){
-        $filter = $this->joinModel->getOrderFilter($id);
-        $this->view->showFilter($filter);
-    }
+
 
 
 

@@ -27,8 +27,8 @@ class AdmController {
         try{
             $this->cusModel->deleteCustById($id);
             header("Location: " . BASE_URL . "customer");
-        } catch (Exception $e) {
-           echo "Accion no permitida, está intentado eliminar un cliente con pedidos asignados"; //VER COMO HACERLOS        
+        } catch (Exception ) {
+            $this->view->error("Accion no permitida, está intentado eliminar un cliente con pedidos asignados");       
         }        
     } // check pasa al model el cliente a borrar
 

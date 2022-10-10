@@ -10,30 +10,21 @@ class View {
     
 }
 
-
-
-
 function showCustomers($customers) {
    
     $this->smarty->assign('count', count($customers)); 
     $this->smarty->assign('customers', $customers);
 
-    $this->smarty->display('customers.tpl');  
-
+    $this->smarty->display('customers.tpl');
 }
 
 function selections($orders, $customers){    
 
     $this->smarty->assign('orders', $orders);
-    $this->smarty->assign('customers', $customers); 
-   
+    $this->smarty->assign('customers', $customers);    
  }
 
-
-
-/* JOIN View ----------------------------------*/
-
-function showOrderCustomer($orderCustomer){
+function showOrderCustomer($orderCustomer){  
     $title= 'Listado de Ordenes Solicitadas';
    $this->smarty->assign('title', $title);   
    $this->smarty->assign('orderCustomer', $orderCustomer); 
@@ -47,8 +38,7 @@ function showOrderCustomer($orderCustomer){
     $this->smarty->assign('send', $send);
     $this->smarty->assign('subtitle', $subtitle);
     }   
-    $this->smarty->display('home.tpl');   
-
+    $this->smarty->display('home.tpl'); 
 }
 
 function editCustomer($company){
@@ -89,14 +79,11 @@ function showDetail($order){
         $this->smarty->display('detailOrder.tpl');
 }
 
-function showFilter($filter){
-    $this->smarty->assign('company', $filter->empresa);
-    $this->smarty->assign('company', $filter->fecha_pago);
-    $this->smarty->assign('company', $filter->forma_pago);
-    $this->smarty->assign('company', $filter->detalle);
-
-    var_dump($filter);
-    $this->smarty->display('home.tpl');
+function error($error){
+    $this->smarty->assign('error', $error);
+    $this->smarty->display('error.tpl');
+        
 }
+
 
 }

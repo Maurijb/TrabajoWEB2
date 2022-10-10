@@ -39,7 +39,6 @@ switch ($params[0]) {
         $id = $params[1];
         $admController->deleteCustomer($id);
         break;
-// case de update cliente---------------------------------
     case 'updateCustomer':
         $admController = new AdmController();
         $id = $params[1];
@@ -96,12 +95,7 @@ switch ($params[0]) {
         $id = $params[1];
         $mainController->asigneOrder($id);
         break;
-    case 'filter':
-        $mainController = new MainController();      
-        $id = $params[1];
-        $mainController->filter($id);
-        break;
-
+    
 
 
         default:

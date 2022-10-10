@@ -24,4 +24,8 @@ class HomeController {
         else header("Location: " . BASE_URL . "order");
      } //check controla el home
 
+     
+        
     }
+
+    
