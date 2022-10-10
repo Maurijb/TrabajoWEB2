@@ -18,4 +18,20 @@ class JoinModel {
             return $query->fetchAll(PDO::FETCH_OBJ);
         }
 
+        public function getOneOrder($id) {
+            /*$db = connect();*/
+            $query = $this->db->prepare("SELECT myorder.*, customer.empresa as empresa FROM myorder JOIN customer ON myorder.id_cliente = customer.id_cliente WHERE n_pedido=?");
+            $query->execute([$id]);
+    
+            return $query->fetch(PDO::FETCH_OBJ);
+        }
+
+        public function getOrderFilter($id){
+            $query = $this->db->prepare("SELECT myorder.*, customer.empresa as empresa FROM myorder JOIN customer ON myorder.id_cliente = customer.id_cliente WHERE id_cliente=?");
+            $query->execute([$id]);
+    
+            return $query->fetchAll(PDO::FETCH_OBJ);
+
+        }
+
 }

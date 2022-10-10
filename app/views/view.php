@@ -35,11 +35,9 @@ function selections($orders, $customers){
 
 function showOrderCustomer($orderCustomer){
     $title= 'Listado de Ordenes Solicitadas';
-   $this->smarty->assign('title', $title);
-   
+   $this->smarty->assign('title', $title);   
    $this->smarty->assign('orderCustomer', $orderCustomer); 
    
-
    $subtitle = 'Enviadas';
    $send = array();
     foreach ($orderCustomer as $order){
@@ -53,38 +51,52 @@ function showOrderCustomer($orderCustomer){
 
 }
 
-function showDetail($idPar, $ordersCustomer){
-  
-    $this->smarty->assign('idPar', $idPar);
+function editCustomer($company){
+       
+        $this->smarty->assign('id', $company->id_cliente); 
+        $this->smarty->assign('company', $company->empresa); 
+        $this->smarty->assign('address', $company->direccion); 
+        $this->smarty->assign('phone', $company->telefono);
+        $this->smarty->assign('responsible', $company->responsable);
+   
+    $this->smarty->display('form_cusEdit.tpl');
+}
+
+function showOrders($ordersCustomer){ 
     $this->smarty->assign('ordersCustomer', $ordersCustomer);
-    foreach ($ordersCustomer as $ord)
-            if ($ord->id_cliente==$idPar){
-                $this->smarty->assign('empresa', $ord->empresa); 
-                $this->smarty->assign('pedido', $ord->detalle); 
-            }                                 
-    $this->smarty->display('detailOrder.tpl');
+
+    $this->smarty->display('orders.tpl');   
 }
 
-function showOrders($ordersCustomer){   
-    
-   $this->smarty->assign('ordersCustomer', $ordersCustomer);
-
-   $this->smarty->display('orders.tpl');
+function edit($order){
+        $this->smarty->assign('id', $order->n_pedido); 
+        $this->smarty->assign('customer', $order->empresa); 
+        $this->smarty->assign('payment', $order->forma_pago); 
+        $this->smarty->assign('date', $order->fecha_pedido);
+        $this->smarty->assign('detail', $order->detalle);
+        
+        $this->smarty->display('form_upd.tpl');
 }
 
-function edit($idPar, $ordersCustomer){
+function showDetail($order){
+        $this->smarty->assign('id', $order->n_pedido); 
+        $this->smarty->assign('customer', $order->empresa); 
+        $this->smarty->assign('payment', $order->forma_pago); 
+        $this->smarty->assign('date', $order->fecha_pedido);
+        $this->smarty->assign('detail', $order->detalle);
+        $this->smarty->assign('id_c', $order->id_cliente); 
 
-    foreach ($ordersCustomer as $ord)
-           if ($ord->n_pedido==$idPar){
-                $this->smarty->assign('id', $ord->n_pedido); 
-                $this->smarty->assign('customer', $ord->empresa); 
-                $this->smarty->assign('payment', $ord->forma_pago); 
-                $this->smarty->assign('date', $ord->fecha_pedido);
-                $this->smarty->assign('detail', $ord->detalle);} 
-                
-                
-                                      
-    $this->smarty->display('form_upd.tpl');
+        $this->smarty->display('detailOrder.tpl');
+}
+
+function showFilter($filter){
+    $this->smarty->assign('company', $filter->empresa);
+    $this->smarty->assign('company', $filter->fecha_pago);
+    $this->smarty->assign('company', $filter->forma_pago);
+    $this->smarty->assign('company', $filter->detalle);
+
+    var_dump($filter);
+    $this->smarty->display('home.tpl');
 }
 
 }

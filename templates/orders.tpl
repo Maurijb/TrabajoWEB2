@@ -19,17 +19,17 @@
     {foreach from=$ordersCustomer item=$ord}
        
     <tr class="{if {$ord->enviado}}enviado{/if}">
-        <th scope="row"><a href="order/{$ord->id_cliente}">{$ord->empresa}</a></th>
+        <th scope="row"><a href="detail/{$ord->n_pedido}">{$ord->empresa}</a></th>
       <td>{$ord->fecha_pedido}</td>
       <td>{$ord->forma_pago}</td>
       <td>{$ord->detalle|truncate:25}</td>
       <td>{if !$ord->enviado}
-        <a href='send/{$ord->n_pedido}' type='button' class='btn btn-success'>Enviar</a>
+        <a href='send/{$ord->n_pedido}' type='button' class='btn btn-success'> Enviar </a>
         {else}                    
-        <a href='asigne/{$ord->n_pedido}' type='button' class='btn btn-info'>Reasignar</a>
+        <a href='asigne/{$ord->n_pedido}' type='button' class='btn btn-info'>Asignar</a>
         {/if} 
         <a href='deleteOrd/{$ord->n_pedido}' type='button' class='btn btn-danger'>Borrar</a> 
-        <a href='update/{$ord->n_pedido}' type='button' class='btn'>Editar</a> 
+        <a href='update/{$ord->n_pedido}' type='button' class='btn btn-dark'>Editar</a> 
        </td>
     </tr>
     

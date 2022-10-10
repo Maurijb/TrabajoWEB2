@@ -32,15 +32,32 @@ class AdmController {
         }        
     } // check pasa al model el cliente a borrar
 
+    function updateCustomer($id){
+        $customer = $this->cusModel->getCustomer($id);
+        $this->view->editCustomer($customer);
+    } // check pasa a la vista el valor a mostrar
+
+    public function editControlCust(){            
+        $company = $_POST['company'];
+        $address = $_POST['address'];
+        $phone = $_POST['phone'];
+        $responsible = $_POST['responsible'];
+        $id = $_POST['id'];
+       
+        $this->cusModel->updateCustomer($company, $address, $phone, $responsible, $id );
+        header("Location: " . BASE_URL . "customer"); 
+    }    // chack pasa al model para que actualice los valores
+
+
     function deleteOrder($id) {
         $this->ordModel->deleteOrdById($id);
         header("Location: " . BASE_URL . "order" );
     }  // check pasa al model la orden a borrar
 
     public function updateOrder($idPar){
-        $ordersCustomer = $this->joinModel->getOrderCustomer();       
-        $this->view->edit($idPar, $ordersCustomer);   
-    } // check pasa a la vista las ordenes para que calcule cual editar (MAL debe pasar una sola)
+        $order = $this->joinModel->getOneOrder($idPar);       
+        $this->view->edit($order);   
+    } // check pasa a la vista la orden a mostrar
 
     public function editControl(){            
         $date = $_POST['date'];

@@ -7,27 +7,15 @@ class OrdModel {
     public function __construct() {
         $this->db = new PDO('mysql:host=localhost;'.'dbname=db_orders;charset=utf8', 'root', '');
     }
-
-    /**
-     * Devuelve la lista de ordenes completa.
-     */
-    public function getAll() {
-        // 1. abro conexión a la DB
-        // ya esta abierta por el constructor de la clase
-
-        // 2. ejecuto la sentencia (2 subpasos)
+   
+    public function getAll() {        
         $query = $this->db->prepare("SELECT * FROM myorder");
         $query->execute();
-
-        // 3. obtengo los resultados
         $orders = $query->fetchAll(PDO::FETCH_OBJ); // devuelve un arreglo de objetos
         
         return $orders;
     }
 
-    /**
-     * Inserta una orden en la base de datos.
-     */
     public function insertOrder($company2, $date, $payment, $details) {
         $query = $this->db->prepare("INSERT INTO myorder (id_cliente, fecha_pedido, forma_pago, detalle, enviado) VALUES (?, ?, ?, ?, ?)");
         $query->execute([$company2, $date, $payment, $details, 0]);
@@ -35,10 +23,6 @@ class OrdModel {
         return $this->db->lastInsertId();
     }
 
-
-    /**
-     * Elimina una orden dado su id.
-     */
     public function deleteOrdById($id) {
         $query = $this->db->prepare('DELETE FROM myorder WHERE n_pedido = ?');
         $query->execute([$id]);

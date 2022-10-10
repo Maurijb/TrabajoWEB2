@@ -27,7 +27,8 @@
       <td>{$cust->telefono}</td>
       <td>{$cust->responsable}</td>
       <td>
-        <a href='delete/{$cust->id_cliente}' type='button' class='btn btn-danger'>Borrar</a>        
+        <a href='delete/{$cust->id_cliente}' type='button' class='btn btn-danger'>Borrar</a> 
+        <a href='updateCustomer/{$cust->id_cliente}' type='button' class='btn btn-dark'>Editar</a>       
        </td>
     </tr>
     

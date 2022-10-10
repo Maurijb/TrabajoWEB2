@@ -1,6 +1,16 @@
+
 {include file="header.tpl"}
 
 
+    <form action="filter" method="POST" class="form-inline">
+    <select name="company2" class="form-control"> 
+        <option >TODOS</option>                   
+    {foreach from=$orderCustomer item=$cust}
+        <option value="{$cust->id_cliente}">{$cust->empresa}</option>                        
+    {/foreach}
+    </select>
+      <button class="btn btn-outline-success" type="submit">Filtrar</button>
+    </form>
 
 {if $orderCustomer != null} 
    

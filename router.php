@@ -38,6 +38,15 @@ switch ($params[0]) {
         $admController->deleteCustomer($id);
         break;
 // case de update cliente---------------------------------
+    case 'updateCustomer':
+        $admController = new AdmController();
+        $id = $params[1];
+        $admController->updateCustomer($id);
+        break;
+    case 'editCustForm':
+        $admController = new AdmController();              
+        $admController->editControlCust();
+        break;  
     case 'customer':
         $mainController = new MainController();
         $mainController->showCus();
@@ -54,6 +63,11 @@ switch ($params[0]) {
     case 'addOrd':
         $mainController = new MainController();        
         $mainController->addOrder();
+        break;
+    case 'detail':
+        $mainController = new MainController();
+        $id = $params[1];      
+        $mainController->showDetail($id);
         break;
     case 'deleteOrd':
         // obtengo el parametro de la acción 
@@ -80,7 +94,11 @@ switch ($params[0]) {
         $id = $params[1];
         $mainController->asigneOrder($id);
         break;
-    
+    case 'filter':
+        $mainController = new MainController();      
+        $id = $params[1];
+        $mainController->filter($id);
+        break;
 
 
 

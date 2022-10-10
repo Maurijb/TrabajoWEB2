@@ -77,6 +77,16 @@ class MainController {
         header("Location: " . BASE_URL . "order"); 
     } //check manda al model la orden a setear "0" no enviado
 
+    function showDetail($id){
+        $order = $this->joinModel->getOneOrder($id);
+        $this->view->showDetail($order);
+    } //check manda la orden a ver en detalle
+
+    function filter($id){
+        $filter = $this->joinModel->getOrderFilter($id);
+        $this->view->showFilter($filter);
+    }
+
 
 
 

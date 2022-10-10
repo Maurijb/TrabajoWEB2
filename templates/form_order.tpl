@@ -17,18 +17,18 @@
                 <div >
                     <label>Forma de Pago</label>                    
                     <select name="payment" class="form-control">
-                        <option value="cash">Contado</option>
-                        <option value="credit">Crédito</option>
-                        <option value="transfer">Transferencia</option>
-                        <option value="check">Cheque</option>
-                        <option value="current">Cta. Cte.</option>
+                        <option value="Contado">Contado</option>
+                        <option value="Credito">Crédito</option>
+                        <option value="Transferencia">Transferencia</option>
+                        <option value="Cheque">Cheque</option>
+                        <option value="CtaCte">Cta. Cte.</option>
                     </select>
                 </div>  
                 <div >
                     <label>Detalle de Pedido</label>
                     <textarea name="details" class="form-control" rows="3"></textarea>
                 </div>                
-                <button type="submit" class="btn btn-primary mt-2">Guardar</button>
+               <button type="submit" class="btn btn-primary mt-2">Guardar</button>
             </div>            
             
 </form>
