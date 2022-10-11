@@ -24,10 +24,12 @@ function selections($orders, $customers){
     $this->smarty->assign('customers', $customers);    
  }
 
-function showOrderCustomer($orderCustomer){  
+function showOrderCustomer($orderCustomer, $customers){  
     $title= 'Listado de Ordenes Solicitadas';
    $this->smarty->assign('title', $title);   
-   $this->smarty->assign('orderCustomer', $orderCustomer); 
+   $this->smarty->assign('orderCustomer', $orderCustomer);
+   
+   $this->smarty->assign('customers', $customers);
    
    $subtitle = 'Enviadas';
    $send = array();

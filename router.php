@@ -95,7 +95,11 @@ switch ($params[0]) {
         $id = $params[1];
         $mainController->asigneOrder($id);
         break;
-    
+
+    case 'filter':
+        $homeController = new HomeController();
+        $homeController->filter();
+        break;
 
 
         default:

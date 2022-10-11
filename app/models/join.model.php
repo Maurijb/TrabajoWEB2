@@ -12,7 +12,8 @@ class JoinModel {
 
         public function getOrderCustomer() {
             /*$db = connect();*/           
-            $query = $this->db->prepare("SELECT myorder.*, customer.empresa as empresa FROM myorder JOIN customer ON myorder.id_cliente = customer.id_cliente");
+            $query = $this->db->prepare("SELECT myorder.*, customer.empresa as empresa 
+            FROM myorder JOIN customer ON myorder.id_cliente = customer.id_cliente");
             $query->execute();
     
             return $query->fetchAll(PDO::FETCH_OBJ);
@@ -20,10 +21,20 @@ class JoinModel {
 
         public function getOneOrder($id) {
             /*$db = connect();*/
-            $query = $this->db->prepare("SELECT myorder.*, customer.empresa as empresa FROM myorder JOIN customer ON myorder.id_cliente = customer.id_cliente WHERE n_pedido=?");
+            $query = $this->db->prepare("SELECT myorder.*, customer.empresa as empresa 
+            FROM myorder JOIN customer ON myorder.id_cliente = customer.id_cliente WHERE n_pedido=?");
             $query->execute([$id]);
     
             return $query->fetch(PDO::FETCH_OBJ);
+        }
+
+        function getOrderCustomerByCompany($filter){
+            $query = $this->db->prepare("SELECT myorder.*, customer.empresa as empresa 
+            FROM myorder JOIN customer ON myorder.id_cliente = customer.id_cliente WHERE customer.id_cliente=?");
+            $query->execute([$filter]);
+    
+            return $query->fetchAll(PDO::FETCH_OBJ);
+
         }
 
 }
