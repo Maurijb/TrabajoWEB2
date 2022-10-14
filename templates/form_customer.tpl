@@ -13,7 +13,7 @@
                 </div>
                 <div >
                     <label>Teléfono</label>
-                    <input name="phone" type="number" class="form-control">
+                    <input name="phone" type="text" class="form-control">
                 </div>
                 <div>
                     <label>Responsable</label>

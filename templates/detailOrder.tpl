@@ -17,15 +17,15 @@
           
             <div class="card" style= "width: 50rem">
             <h1> Detalle del Pedido N° {$id} </h1>
-              <img class="card-img" style= "width: 18rem" src="images/1.png">
+              
               <div class="card-body">
                 <h5 class="card-subtitle mt-3"><strong><u>Empresa/Cliente:</strong></u> ( {$id_c} ) - {$customer}</h5><br>
                 <h5 class="card-subtitle mt-3"><strong><u>Forma de Pago:</strong></u> {$payment}</h5><br>
                 <h5 class="card-subtitle mt-3"><strong><u>Fecha del Pedido:</strong></u> {$date}</h5><br>
                 <h5 class="card-subtitle mt-3"><strong><u>Detalle del Pedido:</strong></u></h5>
-                <textarea name="details" class="form-control mt-3" rows="3" >{$detail}</textarea>
+                <textarea name="details" class="form-control mt-3" rows="5" >{$detail}</textarea>
               </div>           
-              <a href='./order' type='button' class='btn btn-dark'>Cerrar</a> 
+              <a onclick="history.back()" type='button' class='btn btn-dark'>Cerrar</a> 
             </div>
            
 

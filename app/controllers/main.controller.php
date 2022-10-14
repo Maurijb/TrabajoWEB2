@@ -24,6 +24,7 @@ class MainController {
     }
 
     function addCustomer() {
+        if(!empty($_POST)) 
         $company = $_POST['company'];
         $address = $_POST['address'];
         $phone = $_POST['phone'];
@@ -51,6 +52,7 @@ class MainController {
     } // check controla tabla de pedidos x cliente (join)
 
     function addOrder() {
+        if(!empty($_POST)) 
         $company2 = $_POST['company2'];
         $date = $_POST['date'];
         $payment = $_POST['payment'];

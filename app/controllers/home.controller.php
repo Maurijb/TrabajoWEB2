@@ -31,11 +31,14 @@ class HomeController {
         session_start();
         $customers=$this->cusModel->getAll();
         $filter = $_POST['company2'];
+        if ($filter == "")
+        $orderCustomer = $this->joinModel->getOrderCustomer();
+        else 
         $orderCustomer = $this->joinModel->getOrderCustomerByCompany($filter);
         if ($orderCustomer != null)
         $this->view->showOrderCustomer($orderCustomer, $customers);
         else header("Location: " . BASE_URL . "order");
-     } 
+     } //check controla el home con filtro
 
      }
         

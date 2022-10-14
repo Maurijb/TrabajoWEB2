@@ -37,12 +37,14 @@ switch ($params[0]) {
     case 'delete':
         $admController = new AdmController();
         $id = $params[1];
+        if (isset($id) && $id != null)
         $admController->deleteCustomer($id);
         break;
     case 'updateCustomer':
         $admController = new AdmController();
         $id = $params[1];
-        $admController->updateCustomer($id);
+        if (isset($id) && $id != null)
+        $admController->updateCustomer($id);             
         break;
     case 'editCustForm':
         $admController = new AdmController();              
@@ -71,21 +73,22 @@ switch ($params[0]) {
         $mainController->showDetail($id);
         break;
     case 'deleteOrd':
-        // obtengo el parametro de la acción 
         $admController = new AdmController();       
         $id = $params[1];
+        if (isset($id) && $id != null)
         $admController->deleteOrder($id);
         break; 
     case 'update':
         $admController = new AdmController();
         $id = $params[1];
+        if (isset($id) && $id != null)
         $admController->updateOrder($id);
         break; 
     case 'editForm':
         $admController = new AdmController();              
         $admController->editControl();
         break;    
-    case 'send':  // finalize/:ID  
+    case 'send':   
         $mainController = new MainController();      
         $id = $params[1];
         $mainController->sendOrder($id);

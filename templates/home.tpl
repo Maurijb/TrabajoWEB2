@@ -6,7 +6,7 @@
 
 {if $orderCustomer != null} 
    
-<h3 class="{if count($orderCustomer)==count($send)} esconder{/if}">{$title}</h3>   
+<h3 class="{if count($orderCustomer)==count($send)} esconder{/if} mt-5">{$title}</h3>   
 
 <table class="table table-hover {if count($orderCustomer)==count($send)} esconder{/if}">
   <thead>
@@ -23,7 +23,7 @@
       <th scope="row">{$ord->empresa}</th>
       <td>{$ord->fecha_pedido}</td>
       <td>{$ord->forma_pago}</td>
-      <td>{$ord->detalle|truncate:25}</td>
+      <td><a href="detail/{$ord->n_pedido}">{$ord->detalle|truncate:25}</a></td>
     </tr>
     {/foreach}
     </tbody>
@@ -32,7 +32,7 @@
 
 
 {if $send != null}  
-<h3>{$subtitle}</h3>
+<h3 class=" mt-5">{$subtitle}</h3>
     
 <table class="table table-hover">
   <thead>
@@ -49,7 +49,7 @@
         <th scope="row">{$env->empresa}</th>
         <td>{$env->fecha_pedido}</td>
         <td>{$env->forma_pago}</td>
-        <td>{$env->detalle|truncate:25}</td>
+        <td><a href="detail/{$env->n_pedido}">{$env->detalle|truncate:25}</a></td>
     </tr>                
     {/foreach}
     </tbody>

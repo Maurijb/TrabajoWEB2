@@ -11,7 +11,7 @@ class JoinModel {
         /* JOIN de Tablas ----------------------------------*/
 
         public function getOrderCustomer() {
-            /*$db = connect();*/           
+                      
             $query = $this->db->prepare("SELECT myorder.*, customer.empresa as empresa 
             FROM myorder JOIN customer ON myorder.id_cliente = customer.id_cliente");
             $query->execute();
@@ -20,7 +20,7 @@ class JoinModel {
         }
 
         public function getOneOrder($id) {
-            /*$db = connect();*/
+            
             $query = $this->db->prepare("SELECT myorder.*, customer.empresa as empresa 
             FROM myorder JOIN customer ON myorder.id_cliente = customer.id_cliente WHERE n_pedido=?");
             $query->execute([$id]);

@@ -11,7 +11,7 @@ class OrdModel {
     public function getAll() {        
         $query = $this->db->prepare("SELECT * FROM myorder");
         $query->execute();
-        $orders = $query->fetchAll(PDO::FETCH_OBJ); // devuelve un arreglo de objetos
+        $orders = $query->fetchAll(PDO::FETCH_OBJ); 
         
         return $orders;
     }
