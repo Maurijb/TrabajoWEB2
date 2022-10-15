@@ -5,7 +5,7 @@
             <div class="col-3 form-group">
                 <div >
                     <label>Empresa</label>
-                    <input name="company" type="text" class="form-control">
+                    <input name="company" type="text" class="form-control" required>
                 </div>
                 <div >
                     <label>Dirección</label>
@@ -13,7 +13,7 @@
                 </div>
                 <div >
                     <label>Teléfono</label>
-                    <input name="phone" type="text" class="form-control">
+                    <input name="phone" type="text" class="form-control" required>
                 </div>
                 <div>
                     <label>Responsable</label>

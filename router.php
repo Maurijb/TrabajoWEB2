@@ -38,7 +38,7 @@ switch ($params[0]) {
         $admController = new AdmController();
         $id = $params[1];
         if (isset($id) && $id != null)
-        $admController->deleteCustomer($id);
+        $admController->deleteCustomer($id);        
         break;
     case 'updateCustomer':
         $admController = new AdmController();

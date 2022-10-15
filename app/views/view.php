@@ -86,6 +86,4 @@ function error($error){
     $this->smarty->display('error.tpl');
         
 }
-
-
 }

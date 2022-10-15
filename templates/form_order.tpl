@@ -26,9 +26,9 @@
                 </div>  
                 <div >
                     <label>Detalle de Pedido</label>
-                    <textarea name="details" class="form-control" rows="3"></textarea>
+                    <textarea name="details" class="form-control" rows="3" required></textarea>
                 </div>                
                <button type="submit" class="btn btn-primary mt-2">Guardar</button>
-            </div>            
+            </div>                      
             
 </form>

@@ -58,8 +58,8 @@ class MainController {
         $payment = $_POST['payment'];
         $details = $_POST['details'];
 
-        $id = $this->ordModel->insertOrder($company2, $date, $payment, $details);
-        header("Location: " . BASE_URL . "order"); 
+        $id = $this->ordModel->insertOrder($company2, $date, $payment, $details);        
+        header("Location: " . BASE_URL . "order");       
     } //check controla el agregado de ordenes desde el form
 
     function sendOrder($id) {

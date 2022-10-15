@@ -5,7 +5,8 @@ class OrdModel {
     private $db;
 
     public function __construct() {
-        $this->db = new PDO('mysql:host=localhost;'.'dbname=db_orders;charset=utf8', 'root', '');
+        error_reporting(0);
+        $this->db = new PDO('mysql:host=localhost;'.'dbname=db_orders;charset=utf8', 'root', '');        
     }
    
     public function getAll() {        
